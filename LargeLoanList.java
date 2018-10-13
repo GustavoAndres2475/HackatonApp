@@ -60,14 +60,5 @@ public class LargeLoanList {
 			loanList.get(result).paymentMade(payment);
 		}
 	}
-	
-	
-	public static void main(String[] args) {
-		System.out.println("HELLO FREAK BITCHES");
-		LargeLoanObject test = new LargeLoanObject();
-		loanList.add(test);
-		System.out.println(loanList);
-	}
-	
-	
+
 }
