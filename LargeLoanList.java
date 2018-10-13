@@ -13,22 +13,51 @@ public class LargeLoanList {
 		this.add(toAdd);
 	}
 	
+	public int findName(String name) {
+		for(int counter = 0; counter < loanList.size(); counter++) {
+			if(name.equals(loanList.get(counter).getName())) {
+				return counter;
+			}
+		}
+		else {
+			return -1;
+		}
+	}
+	
 	public void removeLargeLoan(LargeLoanObject toDel) {
 		
-		for(int counter = 0; counter < loanList.size(); counter++) {
-			if(toDel.getName().equals(loanList.get(counter).getName())) {
-				loanList.remove(counter);
-				return;
-			}
+		int result = findName(toDel.getName());
+		if(result < 0) {
+			return;
+		}
+		
+		else {
+			loanList.remove(result);
+			return;
 		}
 	}
 	
 	public void removeListPair(listPair toDel) {
 		
-		for(int counter = 0; counter < loanList.size(); counter++) {
-			if(toDel.getName().equals(loanList.getName(counter))) {
-				loanList.remove(counter);
-			}
+		int result = findName(toDel.getName());
+		if(result < 0) {
+			return;
+		}
+		
+		else {
+			loanList.remove(result);
+			return;
+		}
+	}
+	
+	public void paymentMade(String name, int payment) {
+		int result = findName(name);
+		if(result < 0) {
+			return;
+		}
+		
+		else {
+			loanList.get(result).paymentMade(payment);
 		}
 	}
 	
