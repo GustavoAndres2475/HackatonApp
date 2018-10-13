@@ -23,6 +23,15 @@ public class LargeLoanList {
 		}
 	}
 	
+	public void removeListPair(listPair toDel) {
+		
+		for(int counter = 0; counter < loanList.size(); counter++) {
+			if(toDel.getName().equals(loanList.getName(counter))) {
+				loanList.remove(counter);
+			}
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		System.out.println("HELLO FREAK BITCHES");
