@@ -1,36 +1,36 @@
-
+ 
 public class LargeLoanObject {
 	private String name;
-	private double amount;
-	private double interest;
+	private int amount;
+	private int interest;
 	private int paymentAmount;
 	private int timeLeft;
 	
 	public LargeLoanObject() {
 		name = "DEFAULT";
-		amount = 0.0;
-		interest = 0.0;
+		amount = 0;
+		interest = 0;
 		paymentAmount = 0;
 		timeLeft = 0;
 	}
 	
-	public LargeLoanObject(String aName, double anAmount, double anInterest, int aPayment) {
+	public LargeLoanObject(String aName, int anAmount, int anInterest, int aPayment) {
 		name = aName;
 		amount = anAmount;
 		interest = anInterest;
 		paymentAmount = aPayment;
-		timeLeft = (int)amount/paymentAmount;
+		timeLeft = amount/paymentAmount;
 	}
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public double getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 	
-	public double getInterest() {
+	public int getInterest() {
 		return this.interest;
 	}
 	
@@ -46,11 +46,11 @@ public class LargeLoanObject {
 		this.name = newName;
 	}
 	
-	public void setAmount(double newAmount) {
+	public void setAmount(int newAmount) {
 		this.amount = newAmount;
 	}
 	
-	public void setInterest(double newInterest) {
+	public void setInterest(int newInterest) {
 		this.interest = newInterest;
 	}
 	
@@ -58,8 +58,12 @@ public class LargeLoanObject {
 		this.paymentAmount = newPayment;
 	}
 	
+	public void paymentMade(int payment) {
+		this.amount = this.amount - payment;
+	}
+	
 	public void updateTimeLeft() {
-		this.timeLeft = (int)amount / paymentAmount;
+		this.timeLeft = amount / paymentAmount;
 	}
 	
 }

@@ -3,12 +3,56 @@ import java.util.ArrayList;
 
 public class LargeLoanList {
 	
-	public static void main (String[] args) {
-	List<LargeLoanObject> test = new ArrayList<LargeLoanObject>();
-	LargeLoanObject temp = new LargeLoanObject("HI", 100000.20, 1.2, 1000);
+	public void addLargeLoan(LargeLoanObject toAdd) {
+		this.add(toAdd);
+	}
 	
-	System.out.println(temp);
-
+	public void addPersonalLoan(listPair toAdd) {
+		this.add(toAdd);
+	}
 	
+	public int findName(String name) {
+		for(int counter = 0; counter < this.size(); counter++) {
+			if(name.equals(this.get(counter).getName())) {
+				return counter;
+			}
+		}
+		return -1;
+	}
+	
+	public void removeLargeLoan(LargeLoanObject toDel) {
+		
+		int result = this.findName(toDel.getName());
+		if(result < 0) {
+			return;
+		}
+		
+		else {
+			this.remove(this.get(result).getName());
+			return;
+		}
+	}
+	
+	public void removeListPair(listPair toDel) {
+		int result = this.findName(toDel.getName());
+		if(result < 0) {
+			return;
+		}
+		
+		else {
+			this.remove(result);
+			return;
+		}
+	}
+	
+	public void paymentMade(String name, int payment) {
+		int result = this.findName(name);
+		if(result < 0) {
+			return;
+		}
+		
+		else {
+			this.get(result).paymentMade(payment);
+		}
 	}
 }
