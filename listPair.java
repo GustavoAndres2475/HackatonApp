@@ -19,5 +19,21 @@ public class listPair{
 		this.money = money;
 
 	}
+	
+	public String getName() {
+		return this.person;
+	}
+	
+	public int getMoney() {
+		return this.money;
+	}
+	
+	public void setName(String newName) {
+		this.person = newName;
+	}
+	
+	public void setMoney(int newMoney) {
+		this.money = newMoney;
+	}
 }
 
