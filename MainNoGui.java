@@ -3,7 +3,7 @@ public class MainNoGui {
 	
 	
 	public static void (String[] args) {
-		System.out.println("HI");;
+		System.out.println("HI");
 	}
 
 }
