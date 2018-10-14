@@ -27,16 +27,15 @@ public class GuiDebt extends Application{
 	private Scene scene;
 	private Stage stage;
 
-	private static int[][] gridArray;
 	private static Text[] label = new Text[4];
-	public static final Color COLOR_LETTER = Color.rgb(255,255,255);
+	public static final double BLACK = 30;
+	public boolean adding = false;
 
 	@Override
 	public void start(Stage primaryStage){
 		
 		// Create the pane that will hold all of the visual objects
 		pane = new GridPane();
-		//pane.setAlignment(Pos.CENTER);
 		pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
 		pane.setStyle("-fx-background-color: rgb(135,206,250)");
 		pane.setHgap(100);
@@ -48,12 +47,10 @@ public class GuiDebt extends Application{
 		primaryStage.setTitle("Debt Tracker");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		//gridArray = this.gridArray();
 		
 		updateGUI();
-		return;
 
-		//scene.setOnKeyPressed(new KeyHandler());
+		scene.setOnKeyPressed(new KeyHandler());
 	}
 
 
@@ -64,15 +61,26 @@ public class GuiDebt extends Application{
 		label[3] = new Text("# Payments");
 
 		for ( int i = 0; i < COL_UPPER; i++){
-			(label[i]).setFont(Font.font ("Helvetica Neue", FontWeight.BOLD, 30));
+			(label[i]).setFont(Font.font ("Helvetica Neue", FontWeight.BOLD, BLACK));
 			pane.add(label[i], INDEX+(i*4), INDEX, HALF, SPAN);
-			//pane.setHalignment(label[i], HPos.CENTER);
-			//pane.setValignment(label[i], VPos.CENTER);
 		}
 
 		
 	}
 
+	/* Inner class to handle events */
+	private class KeyHandler implements EventHandler<KeyEvent>{
 
+		@Override
+		public void handle(KeyEvent e) {
+			
+			if(e.getCode().equals(KeyCode.C)){
+				// TODO
+			}
+			if(e.getCode().equals(KeyCode.ENTER)){
+				adding = true;
+		}
+			
+		}
+	}
 }
-
