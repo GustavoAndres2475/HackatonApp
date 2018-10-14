@@ -1,8 +1,8 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
-/*
-public class MainNoGui {
+
+public class MainNoGui { /*
 	List<LargeLoanObject> loanList = new ArrayList<LargeLoanObject>();
 	
 	public void addLargeLoan(LargeLoanObject toAdd) {
@@ -54,10 +54,44 @@ public class MainNoGui {
 		}
 	}
 } */
-public class MainNoGui {
 
-	while(true) {
-		
-		
+	public static void main(String[] args) {
+		Scanner temp = new Scanner(System.in);
+		while(true) {
+			System.out.println("Please enter a command: ");
+			System.out.println("(O)we Friend,    (F)riend Owes,    p(A)y Friend");
+			System.out.println("(P)rint list     (R)emove,         (Q)uit ");
+			char command = temp.next().charAt(0);
+			
+			if(command == 'O') {
+				
+			}
+			
+			else if(command == 'F') {
+				
+			}
+			
+			else if(command == 'A') {
+				
+			}
+			
+			else if(command == 'P') {
+				
+			}
+			
+			else if(command == 'R') {
+				
+			}
+			
+			else if(command == 'Q') {
+				
+			}
+			
+			else {
+				System.err.println("Invalid Input!");
+			}
+		}
 	}
+	
+	
 }
