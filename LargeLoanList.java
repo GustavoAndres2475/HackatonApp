@@ -2,18 +2,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class LargeLoanList {
+	List<LargeLoanObject> loanList = new ArrayList<LargeLoanObject>();
 	
 	public void addLargeLoan(LargeLoanObject toAdd) {
-		this.add(toAdd);
-	}
-	
-	public void addPersonalLoan(listPair toAdd) {
-		this.add(toAdd);
+		loanList.add(toAdd);
 	}
 	
 	public int findName(String name) {
-		for(int counter = 0; counter < this.size(); counter++) {
-			if(name.equals(this.get(counter).getName())) {
+		for(int counter = 0; counter < l.size(); counter++) {
+			if(name.equals(loanList.get(counter).getName())) {
 				return counter;
 			}
 		}

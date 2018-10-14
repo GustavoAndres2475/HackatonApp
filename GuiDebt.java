@@ -28,7 +28,7 @@ public class GuiDebt extends Application{
 	private Stage stage;
 
 	private static int[][] gridArray;
-	private static Text[] label;
+	private static Text[] label = new Text[4];
 	public static final Color COLOR_LETTER = Color.rgb(255,255,255);
 
 	@Override
@@ -36,11 +36,11 @@ public class GuiDebt extends Application{
 		
 		// Create the pane that will hold all of the visual objects
 		pane = new GridPane();
-		pane.setAlignment(Pos.CENTER);
+		//pane.setAlignment(Pos.CENTER);
 		pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
 		pane.setStyle("-fx-background-color: rgb(135,206,250)");
-		pane.setHgap(15);
-		pane.setVgap(10);
+		pane.setHgap(100);
+		pane.setVgap(100);
 
 		/* Add GUI code here */
 		scene = new Scene(pane);
@@ -64,9 +64,10 @@ public class GuiDebt extends Application{
 		label[3] = new Text("# Payments");
 
 		for ( int i = 0; i < COL_UPPER; i++){
-			//(label[i]).setFont(Font.font("Helvetica Neue", FontWeight.BOLD, Color.BLACK));
-			pane.add(label[i], INDEX, INDEX, HALF, SPAN);
-			pane.setHalignment(label[i], HPos.CENTER);
+			(label[i]).setFont(Font.font ("Helvetica Neue", FontWeight.BOLD, 30));
+			pane.add(label[i], INDEX+(i*4), INDEX, HALF, SPAN);
+			//pane.setHalignment(label[i], HPos.CENTER);
+			//pane.setValignment(label[i], VPos.CENTER);
 		}
 
 		
